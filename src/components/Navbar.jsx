@@ -11,16 +11,16 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false) //toggle is false by default so when we click on the menu icon it will change to true and the menu will be shown
   return (
     <nav
-    className=  { `${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20` }
+    className=  { `${styles.paddingX} w-full flex items-center py-8 fixed top-0 z-20` }
     >
       <div className=' flex items-center justify-end w-full max-w-7xl mx-auto'>
-       <ul className='list-none hidden sm:flex flex-row gap-10'>
+       <ul className='list-none hidden sm:flex flex-row sm:gap-16'>
         {navLinks.map((link)=> (
           <li key={link.id}
            className={`${
             active === link.title
-            ? "text-tertiary"
-            : "text-secondary"} hover:text-tertiary text-[18px]
+            ? "text-primary"
+            : "text-tertiary"} hover:text-primary text-[18px]
             font-medium cursor-pointer`}
             onClick={()=> setActive(link.title)}>
       
@@ -46,12 +46,13 @@ const Navbar = () => {
               <li key={link.id}
                 className={`${
                 active === link.title
-                ? "text-secondary"
-                : "text-tertiary"} hover:text-secondary text-[58px]
+                ? "text-primary"
+                : "text-tertiary"} hover:text-primary text-[58px]
                 font-medium cursor-pointer`}
-                onClick={()=> setActive(link.title)}>
-          
-                <a href={`#${link.id}`}> {link.title} </a>
+                onClick={()=>{
+                 setToggle(!toggle) 
+                 setActive(link.title)}}>
+                 <a href={`#${link.id}`}> {link.title} </a>
                 </li>
             ))}
             </ul>
