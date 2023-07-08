@@ -1,20 +1,19 @@
-import {
-  javascript,
-  html,
-  css,
-  reactjs,
-  tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  carrent,
-  jobit,
-  tripguide,
-  threejs,
-} from "../assets";
+import javascript from "../assets/javascript.png";
+import reactjs from "../assets/reactjs.png";
+import tailwind from "../assets/tailwind.png";
+import nodejs from "../assets/nodejs.png";
+import mongodb from "../assets/mongodb.png";
+import threejs from "../assets/threejs.svg";
+import git from "../assets/git.png";
+import figma from "../assets/figma.png";
+import html from "../assets/html.png";
+import css from "../assets/css.png";
+import carrent from "../assets/carrent.png";
+import jobit from "../assets/jobit.png";
+import tripguide from "../assets/tripguide.png";
 
 export const navLinks = [
+  { id: "home", title: "Home" },
   {
     id: "about",
     title: "About",
