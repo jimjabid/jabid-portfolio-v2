@@ -28,6 +28,54 @@ export const navLinks = [
   },
 ];
 
+export const icons = [
+  {
+    id: "award",
+    title: "Award",
+    icon: "#",
+  },
+  {
+    id: "code",
+    title: "Code",
+    icon:"#",
+  },
+  {
+    id: "layout",
+    title: "Layout",
+    icon:"#" ,
+  },
+  {
+    id: "design",
+    title: "Design",
+    icon:"#" ,
+  },
+  {
+    id: "team",
+    title: "Team",
+    icon:"#",
+  },
+];
+
+export const socialIcons = [
+  {
+    id: "github",
+    url: "https://github.com/jimjabid",
+    icon: <i className="ri-github-line"></i>,
+  },
+
+  {
+    id: "linkedin",
+    url: "https://www.linkedin.com/in/jabid-jimenez-serrano-960215175/",
+    icon: <i className="ri-linkedin-box-line"></i>,
+  },
+
+  {
+    id: "whatsapp",
+    url: "https://wa.me/573016666666",
+    icon: <i className="ri-whatsapp-line"></i>,
+  },
+];
+
 const technologies = [
   {
     name: "HTML 5",

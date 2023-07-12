@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import { Link } from 'react-router-dom' 
 import {styles} from '../styles'
 import {navLinks} from '../constants'
 import menu from '../assets/menu.svg'
@@ -11,20 +10,20 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false) //toggle is false by default so when we click on the menu icon it will change to true and the menu will be shown
   return (
     <nav
-    className=  { `${styles.paddingX} w-full flex items-center py-8 fixed top-0 z-20` }
+    className=  { `${styles.paddingX} w-full flex items-center py-10 fixed top-0 z-20  ` }
     >
       <div className=' flex items-center justify-end w-full max-w-7xl mx-auto'>
-       <ul className='list-none hidden sm:flex flex-row sm:gap-16'>
+       <ul className='list-none hidden sm:flex flex-row sm:gap-20'>
         {navLinks.map((link)=> (
           <li key={link.id}
            className={`${
-            active === link.title
+            active === link.title //q: what active does? a:
             ? "text-primary"
             : "text-tertiary"} hover:text-primary text-[18px]
-            font-medium cursor-pointer`}
+            font-medium cursor-pointer font-body `}
             onClick={()=> setActive(link.title)}>
       
-            <a href={`#${link.id}`}> {link.title} </a>
+            <a className='font-body' href={`#${link.id}`}> {link.title} </a>
             </li>
         ))}
        </ul>

@@ -15,6 +15,15 @@ export default {
       },
       screens: {
         xs: "450px",
+        md: "930px",
+      },
+      fontFamily: {
+        body: ["Nunito", "serif"],
+        title: ["Bebas Neue", "cursive"],
+        greeting: ["Merriweather", "serif"],
+      },
+      lineHeight: {
+        0: "0",
       },
     },
   },
