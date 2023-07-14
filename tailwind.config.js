@@ -7,14 +7,14 @@ export default {
       colors: {
         "body-color": "#0a151f",
         primary: "#acd4f6",
-        secondary: "#224b6d",
+        secondary: "#224b6da6",
         tertiary: "#f0f5fa",
       },
       boxShadow: {
-        card: "0px 35px 120px -15px #211e35",
+        card: "0px 35px 120px -15px #04060b40",
       },
       screens: {
-        xs: "450px",
+        xs: "370px",
         md: "930px",
       },
       fontFamily: {

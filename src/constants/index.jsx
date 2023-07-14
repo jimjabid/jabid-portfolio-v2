@@ -76,6 +76,25 @@ export const socialIcons = [
   },
 ];
 
+const about= [
+  {
+    title: "Experience",
+    icon: <i class="ri-award-line about__icon"></i>,
+    description:"3 years experienced IT professional with a passion for web design and development."
+  },
+  {
+    title: "UI/UX",
+    icon: <i class="ri-layout-2-line about__icon"></i>,
+    description:"2 years background in sales. I understand the importance of creating user-friendly interfaces."
+  },
+  {
+    title: "Collaboration",
+    icon: <i class="ri-team-line about__icon"></i>,
+    description:"Let's work together to create something beautiful and effective!"
+  },
+  
+];
+
 const technologies = [
   {
     name: "HTML 5",
@@ -185,4 +204,4 @@ const projects = [
   },
 ];
 
-export { technologies, projects };
+export { technologies, projects ,about};

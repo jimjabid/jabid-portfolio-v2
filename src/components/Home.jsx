@@ -65,7 +65,8 @@ const Home = () => {
         </div>
         <div className='flex flex-col justify-center items-center
         img-container bg-body-color relative
-        md:mt-[50px] sm:mt-[30px] mt-[25px]'> 
+        md:mt-[50px] sm:mt-[30px] mt-[25px] xs:w-[300px] xs:h-[325px]
+        sm:w-[400px] sm:h-[450px]'> 
           
         </div>       
       </div>
