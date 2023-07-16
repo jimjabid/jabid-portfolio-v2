@@ -30,6 +30,12 @@
   justify-items: center;
 }
 
+.hash-span {
+  margin-top: -100px;
+  padding-bottom: 100px;
+  display: block;
+}
+
 /* canvas- styles */
 .canvas-loader {
   font-size: 10px;

@@ -1,17 +1,16 @@
 import { BrowserRouter } from "react-router-dom"
-import { Navbar,About, Contact, Home, Works, BallCanvas } from "./components"
+import { BallBg, Navbar,About, Tech,Contact, Home, Works } from "./components"
 
 const App = () => {
  
   return (
     <BrowserRouter>
     <div className="relative z-0 bg-body-color">
-      <BallCanvas />
-      
+      <BallBg/>
       <Navbar />
       <Home />
-      
       <About />
+      <Tech/>
       <Works />
       <Contact />
     </div>
