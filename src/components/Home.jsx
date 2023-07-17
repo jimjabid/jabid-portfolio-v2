@@ -2,7 +2,7 @@ import {useRef, useEffect, useState} from 'react'
 import SplitTextJS from '../utils/SplitTextJS'
 import { styles } from '../styles'
 import {socialIcons} from '../constants'
-import { gsap,Power3 } from 'gsap'
+import { gsap } from 'gsap'
 
 
 const Home = () => {
@@ -45,13 +45,13 @@ const Home = () => {
          <div className='flex flex-col text-center lg:text-start font-title'
           >
           <h2 className={`${styles.heroSubText}  text-tertiary font-greeting 
-          lg:mb-[100px] sm:mb-[60px] md:mb-[80px] mb-[50px] greeting`} >I am</h2>
+          lg:mb-[100px] sm:mb-[60px] md:mb-[80px] mb-[50px] greeting z-0`} >I am</h2>
 
           <h1 className={`${styles.heroHeadText} hero-title`}  >Jabid Jimenez</h1>
           <h1 className={`${styles.heroHeadText} hero-title`} >Web Designer</h1>
           <h1 className={`${styles.heroHeadText} hero-title`}>Web Developer</h1>
           <div className="flex justify-center lg:justify-start md:mt-[100px] sm:mt-[60px] mt-[50px]">
-              <ul className=' list-none flex items-center gap-16'>
+              <ul className=' list-none flex items-center gap-16 z-0'>
                 {socialIcons.map((icon)=> (
                   <li key={icon.id} >
                     <a href={`${icon.url}`} className={styles.iconsSize} 
