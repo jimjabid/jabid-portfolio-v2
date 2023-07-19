@@ -140,7 +140,7 @@ const technologies = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Project 1",
     description:
       "Web-based platform that allows users to search, books, .",
     
@@ -148,7 +148,7 @@ const projects = [
     source_code_link: "https://github.com/",
   },
   {
-    name: "Job IT",
+    name: "Project 2",
     description:
       "Web application that enables users to search for job openings, .",
    
@@ -156,7 +156,7 @@ const projects = [
     source_code_link: "https://github.com/",
   },
   {
-    name: "Trip Guide",
+    name: "Project 3",
     description:
       "A comprehensive travel booking platform that allows users to book flights,.",
     
