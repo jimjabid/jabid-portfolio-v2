@@ -2,21 +2,16 @@ import React, { Suspense, useRef,useState, useEffect } from "react";
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
 import {gsap} from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-
-import {
-  Float,
-  
-  Preload,
- 
-} from "@react-three/drei";
-
+import { Preload,} from "@react-three/drei";
 import CanvasLoader from "../Loader";
+import { debounce } from "lodash";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const BallBg = ({isMobile}) => {
 
-    const meshRef = useRef();
+  const meshRef = useRef();
+  const scrollTriggerRef = useRef();
     
   useFrame((state, delta) => {
     if (meshRef.current) {
@@ -25,30 +20,41 @@ const BallBg = ({isMobile}) => {
   });
   
     const { camera } = useThree();
-  
     camera.zoom = 5.8
-
     camera.updateProjectionMatrix();
 
     useEffect(() => {
-        const body = document.querySelector(".body");
-    
-        ScrollTrigger.create({
+      let ctx = gsap.context(() => {
+        const body = document.querySelector("#body");
+        
+        scrollTriggerRef.current = ScrollTrigger.create({
           trigger: body,
           start: "top top",
           end: () => "+=" + body.offsetHeight * 1.25,
-          onUpdate: (self) => {
-            const progress = self.progress;
+          onUpdate: handleScroll
+          
+        })
+
+        function handleScroll ()  {
+          if (scrollTriggerRef.current) {
+            const progress =  scrollTriggerRef.current.progress;
             const rotationAmount = Math.PI * 2 * progress;
+
             if (meshRef.current) {
               meshRef.current.rotation.x = rotationAmount * -1;
             }
-            
+
             camera.zoom = 5.8 + progress * 2;
             camera.updateProjectionMatrix();
-          },
-          
-        });
+          }             
+        }
+       
+        const debouncedHandleScroll = debounce(handleScroll, 20);
+
+        window.addEventListener("scroll", debouncedHandleScroll);
+       
+      },meshRef)
+        return () => ctx.revert();
        
       }, []);
   
