@@ -12,6 +12,7 @@ export default {
       },
       boxShadow: {
         card: "0px 35px 120px -15px #04060b40",
+        contact: "5px 5px 5px #acd4f6",
       },
       screens: {
         xs: "370px",

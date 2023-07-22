@@ -15,19 +15,46 @@ const ProjectCard = ({
   image,
   source_code_link,
 }) => {
+
+  const projectContentRef = useRef(null);
+  
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      const projectContentRef = document.querySelectorAll(".project-content");
+      const projects = document.querySelectorAll(".show-project");
+
+    gsap.set(projects, { opacity: 0 });
+  
+    projectContentRef.forEach((project) => {
+      const animation = gsap.to(project.querySelector(".show-project"), {
+        paused: true,
+        opacity: 1,
+        scaleY: 1,
+        duration: 0.5,
+        ease: "power4.out",
+      });
+      project.addEventListener("mouseenter", () => animation.play());
+      project.addEventListener("mouseleave", () => animation.reverse());
+    })
+    }, projectContentRef); 
+    return () => ctx.revert();   
+  }, []);
   return (
-  <div className='w-full h-full relative overflow-hidden '>
+  <div ref={projectContentRef} className='project-content w-full h-full relative overflow-hidden '>
     <div className="absolute w-full h-full p-5  
     bg-secondary flex justify-center items-center
-    flex-col inset-0 top-0 left-0 z-10 scale-y-0">
+    flex-col inset-0 top-0 left-0 z-10 scale-y-0 show-project
+    origin-top-left">
       <h1 className="sm:text-[30px] text-center
       tracking-[1.5px]">{name}</h1>
       <p className='font-body md:text-[20.8px] text-center p-5'>
         {description}
       </p>
       <div className='flex flex-col justify-center items-center gap-5'>
-       <a className=""> VISIT SITE</a>
-       <a className=""> VIEW CODE</a>
+       <a href={source_code_link}
+        target="_blank"> VISIT SITE</a>
+       <a href={source_code_link}
+         target="_blank"> VIEW CODE</a>
       </div>
     </div>
     <img src={image} 
@@ -40,6 +67,7 @@ const ProjectCard = ({
 
 const Works = () => {
   const sliderWrapperRef = useRef(null);
+  
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -47,7 +75,7 @@ const Works = () => {
       const items = document.querySelectorAll(".slider-item");
       const width = (items.length - 1) * 100;   
       const section = document.querySelector("#work");
-
+      
       gsap.to(".slider-item", {
         xPercent: -width,
         ease: "none",

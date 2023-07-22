@@ -49,7 +49,7 @@ const BallBg = ({isMobile}) => {
           }             
         }
        
-        const debouncedHandleScroll = debounce(handleScroll, 20);
+        const debouncedHandleScroll = debounce(handleScroll, 100);
 
         window.addEventListener("scroll", debouncedHandleScroll);
        
